@@ -6,7 +6,6 @@ public abstract class Empleado {
     int edad;
     String sexo;
     int sueldo;
-    int jornada;
 
     public Empleado() {
 

@@ -11,7 +11,7 @@ public abstract class Empleado {
 
     }
 
-    public Empleado(String nombre, int edad, String sexo, int sueldo, int jornada) {
+    public Empleado(String nombre, int edad, String sexo, int sueldo) {
 
         setNombre(nombre);
         setEdad(edad);
@@ -68,17 +68,6 @@ public abstract class Empleado {
 
     }
 
-    public void setJornadaa(int j) {
-
-        jornada = j;
-
-    }
-
-    public int getJornada() {
-
-        return jornada;
-
-    }
 
     public abstract float cobrar();
 

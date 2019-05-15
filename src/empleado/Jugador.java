@@ -3,8 +3,8 @@ package empleado;
 public class Jugador extends Empleado {
 	boolean incentivos;
 	
-	public Jugador(){
-		
+	public Jugador(String nombre, int edad, String sexo, int sueldo, boolean incentivos) {
+		super(nombre, edad, sexo, sueldo);
 	}
 	
 	public void cambiarIncentivo(boolean siNo) {

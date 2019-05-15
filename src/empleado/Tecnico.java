@@ -4,13 +4,13 @@ public class Tecnico extends Empleado{
 	int objetivos;
 
 
-	Tecnico(){
+	public Tecnico(){
 
 	}
 
-	Tecnico(int objetivos){
+	public Tecnico(int objetivos){
 		super();
-		this.objetivos = objetivos;
+		setObjetivos(objetivos);
 	}
 	
 	public void setObjetivos(int objetivos) {

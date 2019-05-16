@@ -61,20 +61,20 @@ public class GestionaProyecto {
 
 	public static int eligeMenuPrincipal() {
 		int num;
-		
+
 		System.out.println("Bienvenido al menu principal:");
 		System.out.println("Estos son las fichas de perfiles que ofrecemos");
 		System.out.println("1- Jugadores\n 2- Directivos\n 3- Tecnicos\n 4- Staff");
-		
+
 		num = pedirNumero(1, 4);
 		return num;
 	}
-	
+
 	public static int pedirNumero(int min, int max) {
 		int num;
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		
+
 		do {
 			try {				
 				num = sc.nextInt();
@@ -89,38 +89,72 @@ public class GestionaProyecto {
 		return num;
 	}
 
-	public static void subMenuJugador(Jugador[] plantilla) {
-		int numOpcion;
-		int numJugador;
-		
+	public static String pedirNombre(int tamaño) {
+		String nombre;
+		boolean correcto = true;
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Estos son los jugadores que hay");
-		for (int i = 0; i < plantilla.length; i++) {
-			System.out.println((i+1) + " " + plantilla[i].nombre);
-		}
-		
-		System.out.println("Eliger un menu de los siguientes:");
+		do {
+			System.out.println("Introduce un nombre");
+			System.out.println("Recuerda de que tiene que tener menos de " + tamaño + " caracteres");
+			System.out.println("Y que la palabra no contenga numeros");
+			nombre = sc.nextLine();
+			if(nombre.length() > tamaño) {
+				System.out.println("La palabra que has metido supera el tamaño permitido");
+				correcto = false;
+			}
+			for (int i = 0; i <  nombre.length() && correcto; i++) {
+				if(Character.isDigit(nombre.charAt(i))) {
+					correcto = false;
+					System.out.println("La palabra que has metido contiene un numero y eso no esta permitido");
+				}
+			}
+		} while (correcto == false);
+
+		return nombre;
+	}
+
+	public static void subMenuJugador(Jugador[] plantilla, String[] sexo) {
+		int numOpcion;
+		int numJugador;
+
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Elige un menu de los siguientes:");
 		System.out.println("1- Mostrar ficha tecnica");
 		System.out.println("2- Modificar nombre");
 		System.out.println("3- Modificar edad");
 		System.out.println("4- Modificar sexo");
 		System.out.println("5- Modificar sueldo");
 		System.out.println("6- Modificar goles");
-		
-		numOpcion = pedirNumero(1, 6);
-		
-		switch (numOpcion) {
-		case 1:	break;
 
-		default:
-			break;
+		numOpcion = pedirNumero(1, 6);
+
+		System.out.println("Estos son los jugadores que hay");
+		for (int i = 0; i < plantilla.length; i++) {
+			System.out.println((i+1) + " " + plantilla[i].nombre);
 		}
-		
+
+		numJugador = pedirNumero(1, 11) - 1;
+
+		switch (numOpcion) {
+		case 1:	System.out.println(plantilla[numJugador]); break;
+		case 2: plantilla[numJugador].setNombre(pedirNombre(30)); break;	
+		case 3: System.out.println("Introduce la nueva edad");
+		plantilla[numJugador].setEdad(pedirNumero(18, 36));break;
+		case 4: System.out.println("Introduce un 1 si quieres hombre");
+		System.out.println("En caso contrario si quieres mujer pulsa 2");
+		plantilla[numJugador].setSexo(sexo[pedirNumero(1, 2)]); break;
+		case 5: System.out.println("Introduce un nuevo sueldo");
+		plantilla[numJugador].setEdad(pedirNumero(20000, 100000));break;
+		case 6: System.out.println("Introduce la cantidad de goles");
+		plantilla[numJugador].setEdad(pedirNumero(0, 50));break;
+		}
+
 		System.out.println("Elige un jugador de la lista:");
 		numJugador = pedirNumero(1, 11);
-		
+
 	}
 
 	public static void subMenuDirectivo(Directivo[] junta) {
@@ -129,20 +163,20 @@ public class GestionaProyecto {
 			System.out.println((i+1) + " " + junta[i].nombre);
 		}
 	}
-	
+
 	public static void subMenuTecnico(Tecnico[] soporte) {
 		System.out.println("Estos son los tecnicos que hay");
 		for (int i = 0; i < soporte.length; i++) {
 			System.out.println((i+1) + " " + soporte[i].nombre);
 		}
 	}
-	
+
 	public static void subMenuStaff(Staff[] grupo) {
 		System.out.println("Estos son los responsables de la manutención que hay");
 		for (int i = 0; i < grupo.length; i++) {
 			System.out.println((i+1) + " " + grupo[i].nombre);
 		}
-		
+
 	}
 
 	public static void main(String[] args) {

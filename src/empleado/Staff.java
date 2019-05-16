@@ -2,14 +2,14 @@ package empleado;
 
 public class Staff extends Empleado{
 
-    float horasExtra;
+    private float horasExtra;
 
     public Staff(){
 
     }
 
-    public Staff(float horasExtra){
-        super();
+    public Staff(String nombre, int edad, String sexo, int sueldo, float horasExtra){
+        super(nombre, edad, sexo, sueldo);
         this.horasExtra= horasExtra;
     }
 
@@ -17,4 +17,8 @@ public class Staff extends Empleado{
         float nomina = super.sueldo *  horasExtra;
         return nomina;
     }
+    
+    public String toString() {
+		return "El staff " + super.nombre + " de la edad " + super.edad + " cobra " + super.sueldo;
+	}
 }

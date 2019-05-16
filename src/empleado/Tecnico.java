@@ -1,7 +1,7 @@
 package empleado;
 
 public class Tecnico extends Empleado{
-	int objetivos;
+	private int objetivos;
 
 
 	public Tecnico(){
@@ -29,6 +29,10 @@ public class Tecnico extends Empleado{
 		
 		float nomina = super.sueldo + cumplido;
 		return nomina;
+	}
+	
+	public String toString() {
+		return "El tecnico " + super.nombre + " de la edad " + super.edad + " cobra " + super.sueldo;
 	}
 
 

@@ -21,7 +21,7 @@ public abstract class Empleado {
     }
 
     public void setNombre(String n) {
-
+    	
         nombre = n;
 
     }
@@ -68,7 +68,7 @@ public abstract class Empleado {
 
     }
 
-
+    public abstract String toString();
     public abstract float cobrar();
 
 }

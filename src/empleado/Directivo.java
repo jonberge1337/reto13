@@ -1,7 +1,7 @@
 package empleado;
 
 public class Directivo extends Empleado{
-	float comision;
+	private float comision;
 	public Directivo(){
 		
 	}
@@ -18,5 +18,9 @@ public class Directivo extends Empleado{
 	public float cobrar() {
 		float nomina = super.sueldo *  (1 + comision / 100);
 		return nomina;
+	}
+	
+	public String toString() {
+		return "El directivo " + super.nombre + " de la edad " + super.edad + " cobra " + super.sueldo;
 	}
 }

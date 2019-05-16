@@ -61,52 +61,88 @@ public class GestionaProyecto {
 
 	public static int eligeMenuPrincipal() {
 		int num;
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Bienvenido al menu principal:");
 		System.out.println("Estos son las fichas de perfiles que ofrecemos");
 		System.out.println("1- Jugadores\n 2- Directivos\n 3- Tecnicos\n 4- Staff");
+		
+		num = pedirNumero(1, 4);
+		return num;
+	}
+	
+	public static int pedirNumero(int min, int max) {
+		int num;
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		
 		do {
 			try {				
 				num = sc.nextInt();
 			} catch (Exception e) {
 				num = 0;
 			}
-			if(num < 1|| num > 4) {
+			if(num < min|| num > max) {
 				System.out.println("Por favor Señor/a introduce una opcion correcta");
 			}
-		} while (num < 1|| num > 4);
-
+		} while (num < min|| num > max);
 
 		return num;
 	}
 
 	public static void subMenuJugador(Jugador[] plantilla) {
+		int numOpcion;
+		int numJugador;
+		
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Estos son los jugadores que hay");
 		for (int i = 0; i < plantilla.length; i++) {
 			System.out.println((i+1) + " " + plantilla[i].nombre);
 		}
+		
+		System.out.println("Eliger un menu de los siguientes:");
+		System.out.println("1- Mostrar ficha tecnica");
+		System.out.println("2- Modificar nombre");
+		System.out.println("3- Modificar edad");
+		System.out.println("4- Modificar sexo");
+		System.out.println("5- Modificar sueldo");
+		System.out.println("6- Modificar goles");
+		
+		numOpcion = pedirNumero(1, 6);
+		
+		switch (numOpcion) {
+		case 1:	break;
+
+		default:
+			break;
+		}
+		
+		System.out.println("Elige un jugador de la lista:");
+		numJugador = pedirNumero(1, 11);
+		
 	}
 
 	public static void subMenuDirectivo(Directivo[] junta) {
-		System.out.println("Estos son los jugadores que hay");
+		System.out.println("Estos son los directivos que hay");
 		for (int i = 0; i < junta.length; i++) {
 			System.out.println((i+1) + " " + junta[i].nombre);
 		}
 	}
 	
 	public static void subMenuTecnico(Tecnico[] soporte) {
-		System.out.println("Estos son los jugadores que hay");
+		System.out.println("Estos son los tecnicos que hay");
 		for (int i = 0; i < soporte.length; i++) {
 			System.out.println((i+1) + " " + soporte[i].nombre);
 		}
 	}
 	
 	public static void subMenuStaff(Staff[] grupo) {
-		System.out.println("Estos son los jugadores que hay");
+		System.out.println("Estos son los responsables de la manutención que hay");
 		for (int i = 0; i < grupo.length; i++) {
 			System.out.println((i+1) + " " + grupo[i].nombre);
 		}
+		
 	}
 
 	public static void main(String[] args) {

@@ -2,7 +2,8 @@ package empleado;
 
 public class Jugador extends Empleado {
 	boolean incentivos;
-	
+	int goles;
+
 	public Jugador(String nombre, int edad, String sexo, int sueldo, boolean incentivos) {
 		super(nombre, edad, sexo, sueldo);
 	}

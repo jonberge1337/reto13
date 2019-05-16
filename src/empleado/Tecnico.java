@@ -8,8 +8,8 @@ public class Tecnico extends Empleado{
 
 	}
 
-	public Tecnico(int objetivos){
-		super();
+	public Tecnico(String nombre, int edad, String sexo, int sueldo, int objetivos){
+		super(nombre, edad, sexo, sueldo);
 		setObjetivos(objetivos);
 	}
 	

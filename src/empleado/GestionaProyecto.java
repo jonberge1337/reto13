@@ -10,12 +10,12 @@ public class GestionaProyecto {
 
 
 		for (int i = 0; i < j.length; i++) {
-			numeros[0] = (int) (Math.random()* 9);
+			numeros[0] = (int) (Math.random()* 8);
 			numeros[1] = (int) (Math.random() * (35 - 18) + 18);
 			numeros[2] = (int) (Math.random() * 2);
 			numeros[3] = (int) (Math.random() * (100000 - 20000) + 20000);
 
-			j[i] = new Jugador(nombres[numeros[0]], numeros[1], sexo[numeros[2]], 1500, true); 
+			j[i] = new Jugador(nombres[numeros[0]], numeros[1], sexo[numeros[2]], numeros[3], true); 
 		}
 	}
 
@@ -23,39 +23,40 @@ public class GestionaProyecto {
 		// creamos este array para añadirle la edad, nombre y sexo
 		int[] numeros = new int[4];
 
-		for (int i = 0; i < nombres.length; i++) {
-			numeros[0] = (int) (Math.random()* 9);
+		for (int i = 0; i < d.length; i++) {
+			numeros[0] = (int) (Math.random()* 8);
 			numeros[1] = (int) (Math.random() * (65 - 35) + 35);
 			numeros[2] = (int) (Math.random() * 2);
-			numeros[3] = (int) (Math.random() * (100000 - 20000) + 20000);
+			numeros[3] = (int) (Math.random() * (50000 - 20000) + 20000);
 
 			d[i] = new Directivo(nombres[numeros[0]], numeros[1], sexo[numeros[2]], numeros[3], 20);
 		}
 	}
 
-	public static void crearEquipoTecnico(Directivo[] d, String[] nombres, String[] sexo) {
+	public static void crearEquipoTecnico(Tecnico[] t, String[] nombres, String[] sexo) {
 		// creamos este array para añadirle la edad, nombre y sexo
-		int[] numeros = new int[3];
+		int[] numeros = new int[4];
 
-		for (int i = 0; i < nombres.length; i++) {
-			numeros[0] = (int) (Math.random()* 9);
+		for (int i = 0; i < t.length; i++) {
+			numeros[0] = (int) (Math.random()* 8);
 			numeros[1] = (int) (Math.random() * (65 - 36) + 36);
 			numeros[2] = (int) (Math.random() * 2);
-
-			d[i] = new Directivo(nombres[numeros[0]], numeros[1], sexo[numeros[2]], numeros[3], 20);
+			numeros[3] = (int) (Math.random() * (80000 - 50000) + 50000);
+			
+			t[i] = new Tecnico(nombres[numeros[0]], numeros[1], sexo[numeros[2]], numeros[3], 20);
 		}
 	}
 
-	public static void crearStaff(Directivo[] d, String[] nombres, String[] sexo) {
+	public static void crearStaff(Staff[] s, String[] nombres, String[] sexo) {
 		// creamos este array para añadirle la edad, nombre y sexo
 		int[] numeros = new int[3];
 
-		for (int i = 0; i < nombres.length; i++) {
-			numeros[0] = (int) (Math.random()* 9);
+		for (int i = 0; i < s.length; i++) {
+			numeros[0] = (int) (Math.random()* 8);
 			numeros[1] = (int) (Math.random() * (65 - 18) + 18);
 			numeros[2] = (int) (Math.random() * 2);
 
-			d[i] = new Directivo(nombres[numeros[0]], numeros[1], sexo[numeros[2]], 1500, 20);
+			s[i] = new Staff(nombres[numeros[0]], numeros[1], sexo[numeros[2]], 1500, 20);
 		}
 	}
 
@@ -136,6 +137,7 @@ public class GestionaProyecto {
 			System.out.println((i+1) + " " + plantilla[i].nombre);
 		}
 
+		System.out.println("Elige un jugador de la lista:");
 		numJugador = pedirNumero(1, plantilla.length) - 1;
 
 		switch (numOpcion) {
@@ -151,10 +153,8 @@ public class GestionaProyecto {
 		case 6: System.out.println("Introduce la cantidad de goles");
 		plantilla[numJugador].setEdad(pedirNumero(0, 50));break;
 		}
-
-		System.out.println("Elige un jugador de la lista:");
-		numJugador = pedirNumero(1, 11);
-
+		
+		System.out.println("Pulsa Enter para seguir");
 	}
 
 	public static void subMenuDirectivo(Directivo[] plantilla, String[] sexo) {
@@ -178,7 +178,7 @@ public class GestionaProyecto {
 		for (int i = 0; i < plantilla.length; i++) {
 			System.out.println((i+1) + " " + plantilla[i].nombre);
 		}
-		
+
 		System.out.println("Indica al directivo que quieras modificar");
 		numDirectivo = pedirNumero(1, plantilla.length) - 1;
 
@@ -198,10 +198,10 @@ public class GestionaProyecto {
 
 
 	}
-	
+
 	public static void subMenuTecnico(Tecnico[] plantilla, String[] sexo) {
 		int numOpcion;
-		int numDirectivo;
+		int numTecnico;
 
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
@@ -220,44 +220,63 @@ public class GestionaProyecto {
 		for (int i = 0; i < plantilla.length; i++) {
 			System.out.println((i+1) + " " + plantilla[i].nombre);
 		}
-		
+
 		System.out.println("Indica al directivo que quieras modificar");
-		numDirectivo = pedirNumero(1, plantilla.length) - 1;
+		numTecnico = pedirNumero(1, plantilla.length) - 1;
 
 		switch (numOpcion) {
-		case 1:	System.out.println(plantilla[numDirectivo]); break;
-		case 2: plantilla[numDirectivo].setNombre(pedirNombre(30)); break;	
+		case 1:	System.out.println(plantilla[numTecnico]); break;
+		case 2: plantilla[numTecnico].setNombre(pedirNombre(30)); break;	
 		case 3: System.out.println("Introduce la nueva edad");
-		plantilla[numDirectivo].setEdad(pedirNumero(18, 36));break;
+		plantilla[numTecnico].setEdad(pedirNumero(18, 36));break;
 		case 4: System.out.println("Introduce un 1 si quieres hombre");
 		System.out.println("En caso contrario si quieres mujer pulsa 2");
-		plantilla[numDirectivo].setSexo(sexo[pedirNumero(1, 2)]); break;
+		plantilla[numTecnico].setSexo(sexo[pedirNumero(1, 2)]); break;
 		case 5: System.out.println("Introduce un nuevo sueldo");
-		plantilla[numDirectivo].setSueldo(pedirNumero(20000, 100000));break;
+		plantilla[numTecnico].setSueldo(pedirNumero(20000, 100000));break;
 		case 6: System.out.println("Introduce una edad");
-		plantilla[numDirectivo].setObjetivos(pedirNumero(0, 50));break;
+		plantilla[numTecnico].setObjetivos(pedirNumero(0, 50));break;
 		}
 
 	}
+	
+	public static void subMenuStaff(Staff[] plantilla, String[] sexo) {
+		int numOpcion;
+		int numStaff;
 
-	public static void subMenuDirectivo(Directivo[] junta) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Elige un menu de los siguientes:");
+		System.out.println("1- Mostrar ficha tecnica");
+		System.out.println("2- Modificar nombre");
+		System.out.println("3- Modificar edad");
+		System.out.println("4- Modificar sexo");
+		System.out.println("5- Modificar sueldo");
+		System.out.println("6- Modificar objetivos");
+
+		numOpcion = pedirNumero(1, 6);
+
 		System.out.println("Estos son los directivos que hay");
-		for (int i = 0; i < junta.length; i++) {
-			System.out.println((i+1) + " " + junta[i].nombre);
+		for (int i = 0; i < plantilla.length; i++) {
+			System.out.println((i+1) + " " + plantilla[i].nombre);
 		}
-	}
 
-	public static void subMenuTecnico(Tecnico[] soporte) {
-		System.out.println("Estos son los tecnicos que hay");
-		for (int i = 0; i < soporte.length; i++) {
-			System.out.println((i+1) + " " + soporte[i].nombre);
-		}
-	}
+		System.out.println("Indica al directivo que quieras modificar");
+		numStaff = pedirNumero(1, plantilla.length) - 1;
 
-	public static void subMenuStaff(Staff[] grupo) {
-		System.out.println("Estos son los responsables de la manutención que hay");
-		for (int i = 0; i < grupo.length; i++) {
-			System.out.println((i+1) + " " + grupo[i].nombre);
+		switch (numOpcion) {
+		case 1:	System.out.println(plantilla[numStaff]); break;
+		case 2: plantilla[numStaff].setNombre(pedirNombre(30)); break;	
+		case 3: System.out.println("Introduce la nueva edad");
+		plantilla[numStaff].setEdad(pedirNumero(18, 36));break;
+		case 4: System.out.println("Introduce un 1 si quieres hombre");
+		System.out.println("En caso contrario si quieres mujer pulsa 2");
+		plantilla[numStaff].setSexo(sexo[pedirNumero(1, 2)]); break;
+		case 5: System.out.println("Introduce un nuevo sueldo");
+		plantilla[numStaff].setSueldo(pedirNumero(20000, 100000));break;
+		case 6: System.out.println("Introduce una edad");
+		plantilla[numStaff].setHorasExtra(pedirNumero(0, 50));break;
 		}
 
 	}
@@ -269,18 +288,31 @@ public class GestionaProyecto {
 		Tecnico[] entrenadores = new Tecnico[2];
 		Jugador[] plantilla = new Jugador[11];
 		Staff[] mantenimiento = new Staff[4];
-
+		int menu;
+		final int MIN = 1;
+		final int MAX = 5;
+		
 		crearJugadores(plantilla, nombre, sexo);
-		//		do {
-		//			switch (menu) {
-		//			case value:
-		//				
-		//				break;
-		//
-		//			default:
-		//				break;
-		//			}
-		//		} while (true);
+		crearJuntaDirectiva(directores, nombre, sexo);
+		crearEquipoTecnico(entrenadores, nombre, sexo);
+		crearStaff(mantenimiento, nombre, sexo);
+		
+		do {
+			System.out.println("Elige un menu de los siguientes:");
+			System.out.println("1- Jugadores");
+			System.out.println("2- Directivos");
+			System.out.println("3- Tecnicos");
+			System.out.println("4- Staff");
+			System.out.println("5- Salir");
+			menu = pedirNumero(MIN, MAX);
+			switch (menu) {
+			case 1:	subMenuJugador(plantilla, sexo); break;
+			case 2: subMenuDirectivo(directores, sexo); break;
+			case 3: subMenuTecnico(entrenadores, sexo); break;
+			case 4: subMenuStaff(mantenimiento, sexo); break;
+			case 5: System.out.println("Programa finalizado"); break;
+			}
+		} while (menu != 5);
 
 	}
 

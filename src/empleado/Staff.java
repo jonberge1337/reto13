@@ -12,6 +12,10 @@ public class Staff extends Empleado{
         super(nombre, edad, sexo, sueldo);
         this.horasExtra= horasExtra;
     }
+    
+    public void setHorasExtra(float horas){
+    	this.horasExtra = horas;
+    }
 
     public float cobrar() {
         float nomina = super.sueldo *  horasExtra;

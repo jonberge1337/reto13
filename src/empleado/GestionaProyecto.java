@@ -136,7 +136,7 @@ public class GestionaProyecto {
 			System.out.println((i+1) + " " + plantilla[i].nombre);
 		}
 
-		numJugador = pedirNumero(1, 11) - 1;
+		numJugador = pedirNumero(1, plantilla.length) - 1;
 
 		switch (numOpcion) {
 		case 1:	System.out.println(plantilla[numJugador]); break;
@@ -154,6 +154,89 @@ public class GestionaProyecto {
 
 		System.out.println("Elige un jugador de la lista:");
 		numJugador = pedirNumero(1, 11);
+
+	}
+
+	public static void subMenuDirectivo(Directivo[] plantilla, String[] sexo) {
+		int numOpcion;
+		int numDirectivo;
+
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Elige un menu de los siguientes:");
+		System.out.println("1- Mostrar ficha tecnica");
+		System.out.println("2- Modificar nombre");
+		System.out.println("3- Modificar edad");
+		System.out.println("4- Modificar sexo");
+		System.out.println("5- Modificar sueldo");
+		System.out.println("6- Modificar comision");
+
+		numOpcion = pedirNumero(1, 6);
+
+		System.out.println("Estos son los directivos que hay");
+		for (int i = 0; i < plantilla.length; i++) {
+			System.out.println((i+1) + " " + plantilla[i].nombre);
+		}
+		
+		System.out.println("Indica al directivo que quieras modificar");
+		numDirectivo = pedirNumero(1, plantilla.length) - 1;
+
+		switch (numOpcion) {
+		case 1:	System.out.println(plantilla[numDirectivo]); break;
+		case 2: plantilla[numDirectivo].setNombre(pedirNombre(30)); break;	
+		case 3: System.out.println("Introduce la nueva edad");
+		plantilla[numDirectivo].setEdad(pedirNumero(18, 36));break;
+		case 4: System.out.println("Introduce un 1 si quieres hombre");
+		System.out.println("En caso contrario si quieres mujer pulsa 2");
+		plantilla[numDirectivo].setSexo(sexo[pedirNumero(1, 2)]); break;
+		case 5: System.out.println("Introduce un nuevo sueldo");
+		plantilla[numDirectivo].setSueldo(pedirNumero(20000, 100000));break;
+		case 6: System.out.println("Introduce una edad");
+		plantilla[numDirectivo].setComision(pedirNumero(0, 50));break;
+		}
+
+
+	}
+	
+	public static void subMenuTecnico(Tecnico[] plantilla, String[] sexo) {
+		int numOpcion;
+		int numDirectivo;
+
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Elige un menu de los siguientes:");
+		System.out.println("1- Mostrar ficha tecnica");
+		System.out.println("2- Modificar nombre");
+		System.out.println("3- Modificar edad");
+		System.out.println("4- Modificar sexo");
+		System.out.println("5- Modificar sueldo");
+		System.out.println("6- Modificar objetivos");
+
+		numOpcion = pedirNumero(1, 6);
+
+		System.out.println("Estos son los directivos que hay");
+		for (int i = 0; i < plantilla.length; i++) {
+			System.out.println((i+1) + " " + plantilla[i].nombre);
+		}
+		
+		System.out.println("Indica al directivo que quieras modificar");
+		numDirectivo = pedirNumero(1, plantilla.length) - 1;
+
+		switch (numOpcion) {
+		case 1:	System.out.println(plantilla[numDirectivo]); break;
+		case 2: plantilla[numDirectivo].setNombre(pedirNombre(30)); break;	
+		case 3: System.out.println("Introduce la nueva edad");
+		plantilla[numDirectivo].setEdad(pedirNumero(18, 36));break;
+		case 4: System.out.println("Introduce un 1 si quieres hombre");
+		System.out.println("En caso contrario si quieres mujer pulsa 2");
+		plantilla[numDirectivo].setSexo(sexo[pedirNumero(1, 2)]); break;
+		case 5: System.out.println("Introduce un nuevo sueldo");
+		plantilla[numDirectivo].setSueldo(pedirNumero(20000, 100000));break;
+		case 6: System.out.println("Introduce una edad");
+		plantilla[numDirectivo].setObjetivos(pedirNumero(0, 50));break;
+		}
 
 	}
 

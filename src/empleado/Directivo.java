@@ -8,7 +8,7 @@ public class Directivo extends Empleado{
 	
 	public Directivo(String nombre, int edad, String sexo, int sueldo, float comision){
 		super(nombre, edad, sexo, sueldo);
-		this.comision = comision;
+		setComision(comision);
 	}
 	
 	public void setComision(float comision) {

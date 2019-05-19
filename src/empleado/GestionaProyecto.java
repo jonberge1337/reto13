@@ -55,7 +55,8 @@ public class GestionaProyecto {
 			numeros[0] = (int) (Math.random()* 8);
 			numeros[1] = (int) (Math.random() * (65 - 18) + 18);
 			numeros[2] = (int) (Math.random() * 2);
-
+			// con el staff vamos a usar el sueldo constante de 1500 
+			
 			s[i] = new Staff(nombres[numeros[0]], numeros[1], sexo[numeros[2]], 1500, 20);
 		}
 	}
@@ -123,6 +124,7 @@ public class GestionaProyecto {
 		@SuppressWarnings("unused")
 		String continuar; // Lo usamos para hacer la pausa y que no nos salte el menu
 
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 
 		do {
@@ -177,6 +179,7 @@ public class GestionaProyecto {
 		@SuppressWarnings("unused")
 		String continuar; // Lo usamos para hacer la pausa y que no nos salte el menu
 
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 
 		do {
@@ -215,7 +218,6 @@ public class GestionaProyecto {
 				plantilla[numDirectivo].setSueldo(pedirNumero(20000, 100000));break;
 				case 6: System.out.println("Introduce una edad");
 				plantilla[numDirectivo].setComision(pedirNumero(0, 50));break;
-				case 7: eligeMenuPrincipal(); break;
 				}
 				System.out.println("\n\n\nPulse enter para continuar");
 				continuar = sc.nextLine();
@@ -232,6 +234,7 @@ public class GestionaProyecto {
 		@SuppressWarnings("unused")
 		String continuar; // Lo usamos para hacer la pausa y que no nos salte el menu
 
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 
 		do {
@@ -285,6 +288,7 @@ public class GestionaProyecto {
 		@SuppressWarnings("unused")
 		String continuar; // Lo usamos para hacer la pausa y que no nos salte el menu
 
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);		
 
 		do {
@@ -323,7 +327,6 @@ public class GestionaProyecto {
 				plantilla[numStaff].setSueldo(pedirNumero(20000, 100000));break;
 				case 6: System.out.println("Introduce una edad");
 				plantilla[numStaff].setHorasExtra(pedirNumero(0, 50));break;
-				case 7: eligeMenuPrincipal(); break;
 				}
 				System.out.println("\n\n\nPulse enter para continuar");
 				continuar = sc.nextLine();

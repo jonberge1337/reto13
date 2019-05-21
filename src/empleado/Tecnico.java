@@ -32,7 +32,14 @@ public class Tecnico extends Empleado{
 	}
 	
 	public String toString() {
-		return "El tecnico " + super.nombre + " de la edad " + super.edad + " cobra " + super.sueldo;
+		String frase;
+		if (super.sexo.equalsIgnoreCase("Hombre")) {
+			frase = "El tecnico " + super.nombre + " de la edad " + super.edad + " cobra " + super.sueldo;
+		}else {
+			frase = "La tecnico " + super.nombre + " de la edad " + super.edad + " cobra " + super.sueldo;
+		}
+
+		return frase;
 	}
 
 

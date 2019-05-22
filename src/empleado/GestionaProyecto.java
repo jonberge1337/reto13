@@ -333,6 +333,74 @@ public class GestionaProyecto {
 			}
 		} while (numOpcion != 7);
 	}
+	
+	public static float sumaSalario(Directivo[] directivos) {
+		float suma = 0;
+		for (int i = 0; i < directivos.length; i++) {
+			suma += directivos[i].cobrar();
+		}
+		
+		return suma;
+	}
+	
+	public static float sumaSalario(Tecnico[] tecnicos) {
+		float suma = 0;
+		for (int i = 0; i < tecnicos.length; i++) {
+			suma += tecnicos[i].cobrar();
+		}
+		
+		return suma;
+	}
+	
+	public static float sumaSalario(Jugador[] jugadores) {
+		float suma = 0;
+		for (int i = 0; i < jugadores.length; i++) {
+			suma += jugadores[i].cobrar();
+		}
+		
+		return suma;
+	}
+	
+	public static float sumaSalario(Staff[] staffes) {
+		float suma = 0;
+		for (int i = 0; i < staffes.length; i++) {
+			suma += staffes[i].cobrar();
+		}
+		
+		return suma;
+	}
+	
+	public static void presupuestoEquipo(Directivo[] directivos, Tecnico[] tecnicos, Jugador[] jugadores, Staff[] staffes) {
+		
+		float sumaDire = sumaSalario(directivos);
+		float sumaTecn = sumaSalario(tecnicos);
+		float sumaJuga = sumaSalario(jugadores);
+		float sumaStaf = sumaSalario(staffes);
+		float total = sumaDire + sumaTecn + sumaJuga + sumaStaf;
+		int opcion;
+		final int MIN = 1;
+		final int MAX = 5;
+		
+		System.out.println("Elige que opcion quieres elegir:");
+		System.out.println("1- Presupuesto general");
+		System.out.println("2- Presupuesto de la junta directiva");
+		System.out.println("3- Presupuesto del total de los tecnicos");
+		System.out.println("4- Presupuesto del total de los jugadores");
+		System.out.println("5- Presupuesto del total de los staff");
+		
+		opcion = pedirNumero(MIN, MAX);
+		
+		switch (opcion) {
+		case 1: System.out.println("El equipo cada mes tiene el gasto de " + total); break;
+		case 2: System.out.println("La junta directiva cuesta " + sumaDire + "€ " +  sumaDire * 100 / total + "% del presupuesto total"); break;
+		case 3: System.out.println("El total de los tecnicos cuesta " + sumaTecn + "€ " +  sumaTecn * 100 / total + "% del presupuesto total"); break;
+		case 4: System.out.println("El total de los jugadores cuesta " + sumaJuga + "€ " + sumaJuga * 100 / total + "% del presupuesto total"); break;
+		case 5: System.out.println("El total de los staff cuesta " + sumaStaf + "€ " +  sumaStaf * 100 / total + "% del presupuesto total"); break;
+		}
+		
+		
+		
+	}
 
 	public static void main(String[] args) {
 		String[] sexo = {"Hombre", "Mujer"};
@@ -343,7 +411,7 @@ public class GestionaProyecto {
 		Staff[] mantenimiento = new Staff[4];
 		int menu;
 		final int MIN = 1;
-		final int MAX = 5;
+		final int MAX = 6;
 
 		crearJugadores(plantilla, nombre, sexo);
 		crearJuntaDirectiva(directores, nombre, sexo);
@@ -356,14 +424,16 @@ public class GestionaProyecto {
 			System.out.println("2- Directivos");
 			System.out.println("3- Tecnicos");
 			System.out.println("4- Staff");
-			System.out.println("5- Salir");
+			System.out.println("5- Ver presupuesto del equipo");
+			System.out.println("6- Salir");
 			menu = pedirNumero(MIN, MAX);
 			switch (menu) {
 			case 1:	subMenuJugador(plantilla, sexo); break;
 			case 2: subMenuDirectivo(directores, sexo); break;
 			case 3: subMenuTecnico(entrenadores, sexo); break;
 			case 4: subMenuStaff(mantenimiento, sexo); break;
-			case 5: System.out.println("Programa finalizado"); break;
+			case 5:
+			case 6: System.out.println("Programa finalizado"); break;
 			}
 		} while (menu != 5);
 

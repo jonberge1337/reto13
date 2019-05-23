@@ -124,6 +124,7 @@ public class GestionaProyecto {
 				num = sc.nextInt();
 			} catch (Exception e) {
 				num = 0;
+				sc.nextLine();
 			}
 			if(num < min|| num > max) {
 				System.out.println("Por favor Señor/a introduce una opcion correcta");

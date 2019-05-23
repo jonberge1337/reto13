@@ -139,10 +139,11 @@ public class GestionaProyecto {
 	 */
 	public static String pedirNombre(int tamaño) {
 		String nombre;
-		boolean correcto = true;
+		boolean correcto;
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		do {
+			correcto = true;
 			System.out.println("Introduce un nombre");
 			System.out.println("Recuerda de que tiene que tener menos de " + tamaño + " caracteres");
 			System.out.println("Y que la palabra no contenga numeros");
@@ -519,7 +520,7 @@ public class GestionaProyecto {
 			case 2: subMenuDirectivo(directores, sexo); break;
 			case 3: subMenuTecnico(entrenadores, sexo); break;
 			case 4: subMenuStaff(mantenimiento, sexo); break;
-			case 5: presupuestoEquipo(directores, entrenadores, plantilla, mantenimiento);
+			case 5: presupuestoEquipo(directores, entrenadores, plantilla, mantenimiento); break;
 			case 6: System.out.println("Programa finalizado"); break;
 			}
 		} while (menu != 5);

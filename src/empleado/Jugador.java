@@ -1,5 +1,9 @@
 package empleado;
 
+/**
+ * @author THAILAND DEVELOPER TEAM
+ *
+ */
 public class Jugador extends Empleado {
 	private boolean incentivos;
 	private int goles;

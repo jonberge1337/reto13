@@ -1,5 +1,9 @@
 package empleado;
 
+/**
+ * @author THAILAND DEVELOPER TEAM
+ *
+ */
 public class Tecnico extends Empleado{
 
 	private int objetivos;

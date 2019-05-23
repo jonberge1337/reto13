@@ -3,7 +3,7 @@ package empleado;
 import java.util.Scanner;
 
 /**
- * @author THAILAND TEAM
+ * @author THAILAND DEVELOPER TEAM
  *
  */
 public class GestionaProyecto {
@@ -168,8 +168,8 @@ public class GestionaProyecto {
 		return nombre;
 	}
 
-	/**Mostramos el SubMenu de jugadores y recogemos la opcion elegida por el usuario
-	 * 
+	/**
+	 * Mostramos el SubMenu de jugadores y recogemos la opcion elegida por el usuario
 	 * 
 	 * @param plantilla corresponde al array de los jugadores 
 	 * @param sexo corresponde al array de género
@@ -229,7 +229,9 @@ public class GestionaProyecto {
 		} while (numOpcion != 7);
 	}
 
-	/**Mostramos el SubMenu de directivos y recogemos la opcion elegida por el usuario
+	/**
+	 * Mostramos el SubMenu de directivos y recogemos la opcion elegida por el usuario
+	 * 
 	 * @param plantilla corresponde al array de los directivos
 	 * @param sexo corresponde al array de género
 	 */
@@ -288,7 +290,9 @@ public class GestionaProyecto {
 
 	}
 
-	/**Mostramos el SubMenu de tecnicos y recogemos la opcion elegida por el usuario
+	/**
+	 * Mostramos el SubMenu de tecnicos y recogemos la opcion elegida por el usuario
+	 * 
 	 * @param plantilla plantilla corresponde al array de los técnicos
 	 * @param sexo corresponde al array de género
 	 */
@@ -346,7 +350,9 @@ public class GestionaProyecto {
 
 	}
 
-	/**Mostramos el SubMenu de staff y recogemos la opcion elegida por el usuario
+	/**
+	 * Mostramos el SubMenu de staff y recogemos la opcion elegida por el usuario
+	 * 
 	 * @param plantilla corresponde al array de los staff
 	 * @param sexo corresponde al array de género
 	 */
@@ -507,7 +513,7 @@ public class GestionaProyecto {
 	/**
 	 * Muestra el menú principal y crea todos los objetos necesarios
 	 *	
-	 * @param args
+	 * @param args parametro por defecto del metodo main
 	 */
 	public static void main(String[] args) {
 		String[] sexo = {"Hombre", "Mujer"};

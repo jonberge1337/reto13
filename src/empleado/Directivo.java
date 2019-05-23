@@ -1,5 +1,9 @@
 package empleado;
 
+/**
+ * @author THAILAND DEVELOPER TEAM
+ *
+ */
 public class Directivo extends Empleado{
 	private float comision;
 	/**
@@ -26,7 +30,7 @@ public class Directivo extends Empleado{
 	/**
 	 * Da valor a la comisión del Directivo
 	 * 
-	 * @param comision
+	 * @param comision corresponde a la comisión del Directivo
 	 */
 	public void setComision(float comision) {
 		this.comision = comision;

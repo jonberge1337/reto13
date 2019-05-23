@@ -1,7 +1,7 @@
 package empleado;
 
 /**
- * @author adminportatil
+ * @author THAILAND DEVELOPER TEAM
  *
  */
 public class Staff extends Empleado{

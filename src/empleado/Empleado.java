@@ -1,5 +1,9 @@
 package empleado;
 
+/**
+ * @author THAILAND DEVELOPER TEAM
+ *
+ */
 public abstract class Empleado {
 
     String nombre;

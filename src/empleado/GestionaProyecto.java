@@ -34,8 +34,8 @@ public class GestionaProyecto {
 	 * Crea individualmente los directivos y los introduce en el array
 	 * 
 	 * @param d corresponde al array de los directivos
-	 * @param nombres
-	 * @param sexo
+	 * @param nombres corresponde al array de género
+	 * @param sexo corresponde al array de género
 	 */
 	public static void crearJuntaDirectiva(Directivo[] d, String[] nombres, String[] sexo) {
 		// creamos este array para añadirle la edad, nombre y sexo
@@ -55,8 +55,8 @@ public class GestionaProyecto {
 	 * Crea individualmente los directivos y los introduce en el array
 	 * 
 	 * @param t corresponde al array de los tecnicos
-	 * @param nombres
-	 * @param sexo
+	 * @param nombres corresponde al array de género
+	 * @param sexo corresponde al array de género
 	 */
 	public static void crearEquipoTecnico(Tecnico[] t, String[] nombres, String[] sexo) {
 		// creamos este array para añadirle la edad, nombre y sexo
@@ -168,11 +168,11 @@ public class GestionaProyecto {
 		return nombre;
 	}
 
-	/**
+	/**Mostramos el SubMenu de jugadores y recogemos la opcion elegida por el usuario
 	 * 
 	 * 
-	 * @param plantilla
-	 * @param sexo
+	 * @param plantilla corresponde al array de los jugadores 
+	 * @param sexo corresponde al array de género
 	 */
 	public static void subMenuJugador(Jugador[] plantilla, String[] sexo) {
 		int numOpcion;
@@ -229,9 +229,9 @@ public class GestionaProyecto {
 		} while (numOpcion != 7);
 	}
 
-	/**
-	 * @param plantilla
-	 * @param sexo
+	/**Mostramos el SubMenu de directivos y recogemos la opcion elegida por el usuario
+	 * @param plantilla corresponde al array de los directivos
+	 * @param sexo corresponde al array de género
 	 */
 	public static void subMenuDirectivo(Directivo[] plantilla, String[] sexo) {
 		int numOpcion;
@@ -288,9 +288,9 @@ public class GestionaProyecto {
 
 	}
 
-	/**
-	 * @param plantilla
-	 * @param sexo
+	/**Mostramos el SubMenu de tecnicos y recogemos la opcion elegida por el usuario
+	 * @param plantilla plantilla corresponde al array de los técnicos
+	 * @param sexo corresponde al array de género
 	 */
 	public static void subMenuTecnico(Tecnico[] plantilla, String[] sexo) {
 		int numOpcion;
@@ -346,9 +346,9 @@ public class GestionaProyecto {
 
 	}
 
-	/**
-	 * @param plantilla
-	 * @param sexo
+	/**Mostramos el SubMenu de staff y recogemos la opcion elegida por el usuario
+	 * @param plantilla corresponde al array de los staff
+	 * @param sexo corresponde al array de género
 	 */
 	public static void subMenuStaff(Staff[] plantilla, String[] sexo) {
 		int numOpcion;
@@ -405,8 +405,10 @@ public class GestionaProyecto {
 	}
 	
 	/**
-	 * @param directivos
-	 * @return
+	 * Nos suma los salarios de directivos
+	 *
+	 * @param directivos corresponde al array de los directivos
+	 * @return devuelve la suma de los salarios
 	 */
 	public static float sumaSalario(Directivo[] directivos) {
 		float suma = 0;
@@ -418,8 +420,10 @@ public class GestionaProyecto {
 	}
 	
 	/**
-	 * @param tecnicos
-	 * @return
+	 * Nos suma los salarios de tecnicos
+	 *
+	 * @param tecnicos corresponde al array de los tecnicos
+	 * @return devuelve la suma de los salarios
 	 */
 	public static float sumaSalario(Tecnico[] tecnicos) {
 		float suma = 0;
@@ -431,8 +435,10 @@ public class GestionaProyecto {
 	}
 	
 	/**
-	 * @param jugadores
-	 * @return
+	 * Nos suma los salarios de jugadores
+	 *
+	 * @param jugadores corresponde al array de los jugadores
+	 * @return devuelve la suma de los salarios
 	 */
 	public static float sumaSalario(Jugador[] jugadores) {
 		float suma = 0;
@@ -444,8 +450,10 @@ public class GestionaProyecto {
 	}
 	
 	/**
-	 * @param staffes
-	 * @return
+	 * Nos suma los salarios de staff
+	 *
+	 * @param staffes corresponde al array de los staff
+	 * @return devuelve la suma de los salarios
 	 */
 	public static float sumaSalario(Staff[] staffes) {
 		float suma = 0;
@@ -457,10 +465,12 @@ public class GestionaProyecto {
 	}
 	
 	/**
-	 * @param directivos
-	 * @param tecnicos
-	 * @param jugadores
-	 * @param staffes
+	 * Suma los salarios de todo el equipo
+	 *
+	 * @param directivos corresponde al array de los directivos
+	 * @param tecnicos corresponde al array de los staff tecnicos
+	 * @param jugadores corresponde al array de los jugadores
+	 * @param staffes corresponde al array de los staff
 	 */
 	public static void presupuestoEquipo(Directivo[] directivos, Tecnico[] tecnicos, Jugador[] jugadores, Staff[] staffes) {
 		
@@ -495,6 +505,8 @@ public class GestionaProyecto {
 	}
 
 	/**
+	 * Muestra el menú principal y crea todos los objetos necesarios
+	 *	
 	 * @param args
 	 */
 	public static void main(String[] args) {

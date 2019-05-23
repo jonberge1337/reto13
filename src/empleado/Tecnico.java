@@ -1,25 +1,20 @@
 package empleado;
 
 public class Tecnico extends Empleado{
-	/**
-	 * 
-	 */
+
 	private int objetivos;
-
-
-	/**
-	 * 
-	 */
 	public Tecnico(){
 
 	}
 
 	/**
-	 * @param nombre
-	 * @param edad
-	 * @param sexo
-	 * @param sueldo
-	 * @param objetivos
+	 * Da valor a todos los atributos del Técnico
+	 *
+	 * @param nombre corresponde al nombre del Técnico
+	 * @param edad corresponde a la edad del Técnico
+	 * @param sexo corresponde al género del Técnico
+	 * @param sueldo corresponde al sueldo del Técnico
+	 * @param objetivos corresponde a los objetivos del Técnico
 	 */
 	public Tecnico(String nombre, int edad, String sexo, int sueldo, int objetivos){
 		super(nombre, edad, sexo, sueldo);
@@ -27,7 +22,9 @@ public class Tecnico extends Empleado{
 	}
 	
 	/**
-	 * @param objetivos
+	 * Da valor a los objetivos del Técnico
+	 *
+	 * @param objetivos corresponde a los objetivos del Técnico
 	 */
 	public void setObjetivos(int objetivos) {
 		this.objetivos = objetivos;

@@ -12,8 +12,8 @@ public class GestionaProyecto {
 	 * Crea individualmente los jugadores y los introduce en el array
 	 * 
 	 * @param j corresponde al array de los jugadores
-	 * @param nombres le pasamos 
-	 * @param sexo
+	 * @param nombres le pasamos un array de nombres
+	 * @param sexo corresponde al array del género
 	 */
 	public static void crearJugadores(Jugador[] j, String[] nombres, String[] sexo) {
 		// creamos este array para añadirle la edad, nombre y sexo
@@ -33,7 +33,7 @@ public class GestionaProyecto {
 	/**
 	 * Crea individualmente los directivos y los introduce en el array
 	 * 
-	 * @param d
+	 * @param d corresponde al array de los directivos
 	 * @param nombres
 	 * @param sexo
 	 */
@@ -54,7 +54,7 @@ public class GestionaProyecto {
 	/**
 	 * Crea individualmente los directivos y los introduce en el array
 	 * 
-	 * @param t
+	 * @param t corresponde al array de los tecnicos
 	 * @param nombres
 	 * @param sexo
 	 */
@@ -75,9 +75,9 @@ public class GestionaProyecto {
 	/**
 	 * Crea individualmente los staff y los introduce en el array
 	 * 
-	 * @param s
-	 * @param nombres
-	 * @param sexo
+	 * @param s corresponde al array de los staff
+	 * @param nombres corresponde al array de nombres
+	 * @param sexo corresponde al array de género
 	 */
 	public static void crearStaff(Staff[] s, String[] nombres, String[] sexo) {
 		// creamos este array para añadirle la edad, nombre y sexo
@@ -94,9 +94,9 @@ public class GestionaProyecto {
 	}
 
 	/**
+	 * Muestra el menú principal
 	 * 
-	 * 
-	 * @return
+	 * @return devuelve el numero seleccionado por el usuario
 	 */
 	public static int eligeMenuPrincipal() {
 		int num;
@@ -110,9 +110,11 @@ public class GestionaProyecto {
 	}
 
 	/**
-	 * @param min
-	 * @param max
-	 * @return
+	 * pedir un numero con los tamaños definidos
+	 * 
+	 * @param min primer parametro el minimo
+	 * @param max segundo parametro el maximo
+	 * @return devuelve el número introducido por el usuario
 	 */
 	public static int pedirNumero(int min, int max) {
 		int num;
@@ -135,8 +137,10 @@ public class GestionaProyecto {
 	}
 
 	/**
-	 * @param tamaño
-	 * @return
+	 * pedir un String del tamaño definido
+	 * 
+	 * @param tamaño define el tamaño del string
+	 * @return devuelve un String no acepta digitos
 	 */
 	public static String pedirNombre(int tamaño) {
 		String nombre;
@@ -165,6 +169,8 @@ public class GestionaProyecto {
 	}
 
 	/**
+	 * 
+	 * 
 	 * @param plantilla
 	 * @param sexo
 	 */

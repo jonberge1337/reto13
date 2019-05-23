@@ -2,8 +2,19 @@ package empleado;
 
 import java.util.Scanner;
 
+/**
+ * @author THAILAND TEAM
+ *
+ */
 public class GestionaProyecto {
 
+	/**
+	 * Crea individualmente los jugadores y los introduce en el array
+	 * 
+	 * @param j corresponde al array de los jugadores
+	 * @param nombres le pasamos 
+	 * @param sexo
+	 */
 	public static void crearJugadores(Jugador[] j, String[] nombres, String[] sexo) {
 		// creamos este array para añadirle la edad, nombre y sexo
 		int[] numeros = new int[4];
@@ -19,6 +30,13 @@ public class GestionaProyecto {
 		}
 	}
 
+	/**
+	 * Crea individualmente los directivos y los introduce en el array
+	 * 
+	 * @param d
+	 * @param nombres
+	 * @param sexo
+	 */
 	public static void crearJuntaDirectiva(Directivo[] d, String[] nombres, String[] sexo) {
 		// creamos este array para añadirle la edad, nombre y sexo
 		int[] numeros = new int[4];
@@ -33,6 +51,13 @@ public class GestionaProyecto {
 		}
 	}
 
+	/**
+	 * Crea individualmente los directivos y los introduce en el array
+	 * 
+	 * @param t
+	 * @param nombres
+	 * @param sexo
+	 */
 	public static void crearEquipoTecnico(Tecnico[] t, String[] nombres, String[] sexo) {
 		// creamos este array para añadirle la edad, nombre y sexo
 		int[] numeros = new int[4];
@@ -47,6 +72,13 @@ public class GestionaProyecto {
 		}
 	}
 
+	/**
+	 * Crea individualmente los staff y los introduce en el array
+	 * 
+	 * @param s
+	 * @param nombres
+	 * @param sexo
+	 */
 	public static void crearStaff(Staff[] s, String[] nombres, String[] sexo) {
 		// creamos este array para añadirle la edad, nombre y sexo
 		int[] numeros = new int[3];
@@ -61,6 +93,11 @@ public class GestionaProyecto {
 		}
 	}
 
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
 	public static int eligeMenuPrincipal() {
 		int num;
 
@@ -72,6 +109,11 @@ public class GestionaProyecto {
 		return num;
 	}
 
+	/**
+	 * @param min
+	 * @param max
+	 * @return
+	 */
 	public static int pedirNumero(int min, int max) {
 		int num;
 		@SuppressWarnings("resource")
@@ -91,6 +133,10 @@ public class GestionaProyecto {
 		return num;
 	}
 
+	/**
+	 * @param tamaño
+	 * @return
+	 */
 	public static String pedirNombre(int tamaño) {
 		String nombre;
 		boolean correcto = true;
@@ -116,6 +162,10 @@ public class GestionaProyecto {
 		return nombre;
 	}
 
+	/**
+	 * @param plantilla
+	 * @param sexo
+	 */
 	public static void subMenuJugador(Jugador[] plantilla, String[] sexo) {
 		int numOpcion;
 		int numJugador;
@@ -171,6 +221,10 @@ public class GestionaProyecto {
 		} while (numOpcion != 7);
 	}
 
+	/**
+	 * @param plantilla
+	 * @param sexo
+	 */
 	public static void subMenuDirectivo(Directivo[] plantilla, String[] sexo) {
 		int numOpcion;
 		int numDirectivo;
@@ -226,6 +280,10 @@ public class GestionaProyecto {
 
 	}
 
+	/**
+	 * @param plantilla
+	 * @param sexo
+	 */
 	public static void subMenuTecnico(Tecnico[] plantilla, String[] sexo) {
 		int numOpcion;
 		int numTecnico;
@@ -280,6 +338,10 @@ public class GestionaProyecto {
 
 	}
 
+	/**
+	 * @param plantilla
+	 * @param sexo
+	 */
 	public static void subMenuStaff(Staff[] plantilla, String[] sexo) {
 		int numOpcion;
 		int numStaff;
@@ -334,6 +396,10 @@ public class GestionaProyecto {
 		} while (numOpcion != 7);
 	}
 	
+	/**
+	 * @param directivos
+	 * @return
+	 */
 	public static float sumaSalario(Directivo[] directivos) {
 		float suma = 0;
 		for (int i = 0; i < directivos.length; i++) {
@@ -343,6 +409,10 @@ public class GestionaProyecto {
 		return suma;
 	}
 	
+	/**
+	 * @param tecnicos
+	 * @return
+	 */
 	public static float sumaSalario(Tecnico[] tecnicos) {
 		float suma = 0;
 		for (int i = 0; i < tecnicos.length; i++) {
@@ -352,6 +422,10 @@ public class GestionaProyecto {
 		return suma;
 	}
 	
+	/**
+	 * @param jugadores
+	 * @return
+	 */
 	public static float sumaSalario(Jugador[] jugadores) {
 		float suma = 0;
 		for (int i = 0; i < jugadores.length; i++) {
@@ -361,6 +435,10 @@ public class GestionaProyecto {
 		return suma;
 	}
 	
+	/**
+	 * @param staffes
+	 * @return
+	 */
 	public static float sumaSalario(Staff[] staffes) {
 		float suma = 0;
 		for (int i = 0; i < staffes.length; i++) {
@@ -370,6 +448,12 @@ public class GestionaProyecto {
 		return suma;
 	}
 	
+	/**
+	 * @param directivos
+	 * @param tecnicos
+	 * @param jugadores
+	 * @param staffes
+	 */
 	public static void presupuestoEquipo(Directivo[] directivos, Tecnico[] tecnicos, Jugador[] jugadores, Staff[] staffes) {
 		
 		float sumaDire = sumaSalario(directivos);
@@ -402,6 +486,9 @@ public class GestionaProyecto {
 		
 	}
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		String[] sexo = {"Hombre", "Mujer"};
 		String[] nombre = {"Kasem", "Snong", "Günther", "Bamphen", "Vichai", "Paiboon", "Nit", "Wanchai"};
@@ -432,7 +519,7 @@ public class GestionaProyecto {
 			case 2: subMenuDirectivo(directores, sexo); break;
 			case 3: subMenuTecnico(entrenadores, sexo); break;
 			case 4: subMenuStaff(mantenimiento, sexo); break;
-			case 5:
+			case 5: presupuestoEquipo(directores, entrenadores, plantilla, mantenimiento);
 			case 6: System.out.println("Programa finalizado"); break;
 			}
 		} while (menu != 5);

@@ -548,7 +548,7 @@ public class GestionaProyecto {
 			case 5: presupuestoEquipo(directores, entrenadores, plantilla, mantenimiento); break;
 			case 6: System.out.println("Programa finalizado"); break;
 			}
-		} while (menu != 5);
+		} while (menu != 6);
 
 	}
 
